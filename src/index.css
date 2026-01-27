@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg: #0a0a0a;
+  --secondary-bg: #111111;
+  --accent-color: #3b82f6;
+  /* Blue-500 */
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-white font-sans scroll-smooth transition-colors duration-500;
+  }
+}
+
+.dark body {
+  @apply bg-[#0a0a0a] text-white;
+}
+
+html:not(.dark) body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.glass {
+  @apply bg-white bg-opacity-5 backdrop-blur-lg border border-white border-opacity-10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-500 to-blue-800;
+}
+
+.custom-shadow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.custom-shadow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0a0a0a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-800 rounded-full border-2 border-[#0a0a0a];
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-700;
+}
+
+@keyframes gradient-x {
+
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 5s ease infinite;
+}
