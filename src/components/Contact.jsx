@@ -38,7 +38,7 @@ const Contact = () => {
                                 <div className="p-3 bg-blue-500/10 rounded-xl group-hover:bg-blue-500/20 transition-colors">
                                     <FaEnvelope className="text-2xl text-blue-500" />
                                 </div>
-                                <span className="font-semibold text-lg">muskanwagh16@gmail.com</span>
+                                <span className="font-semibold text-lg">muskanwagh1608@gmail.com</span>
                             </a>
                             <a href="https://github.com/Maahi-0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded-2xl text-gray-300 hover:text-white hover:border-white/30 transition-all group">
                                 <div className="p-3 bg-white/10 rounded-xl group-hover:bg-white/20 transition-colors">
