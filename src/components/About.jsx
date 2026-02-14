@@ -36,12 +36,18 @@ const About = () => {
                         About <span className="text-blue-500">Me</span>
                     </h2>
                     <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                        I am a dedicated developer with a strong foundation in C, C++, and modern web based technologies.
-                        specially in Mern stack development.Passionate about building efficient solutions and exploring the world of web developmentand software engineering.
+                        I’m currently in my 3rd year of Computer Science, and along the way I discovered that I don’t just enjoy using technology — I love building with it. What started as curiosity quickly turned into a passion for creating things that people can actually use and experience.
+
+                        Today, I focus on building modern, scalable web applications using React.js and Next.js, while exploring how real products are designed from frontend experiences to backend systems. Learning databases like MongoDB and working with APIs helped me understand how everything connects behind the scenes.
                     </p>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                        My journey involves constant learning and applying new concepts to real-world projects.
-                        From low-level programming to crafting responsive web interfaces, I enjoy every aspect of the development lifecycle.
+                    <p className="text-gray-400 text-lg leading-relaxed mb-6">
+
+                        Every project I work on is more than just code — it’s a lesson in problem-solving, patience, and growth. From debugging late at night to finally seeing something work, the journey keeps pushing me forward.
+
+                        I’m still learning, still experimenting, and still growing — but I’m building with the vision of becoming a software engineer who creates meaningful and impactful products.
+
+                        This portfolio isn’t just a collection of projects.
+                        It’s a reflection of my progress and the path I’m carving in tech
                     </p>
 
                     <div className="grid grid-cols-2 gap-6">

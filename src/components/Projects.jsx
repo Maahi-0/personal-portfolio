@@ -3,6 +3,22 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
+
+    {
+        title: "Campus Connect ",
+        description: "Campus Connect is a centralized web platform built with Next.js that enables students to discover clubs, events, and campus communities in one place.",
+        tech: ["Next.js", "Hooks", "vercel", "tailwindcss", "framer-motion"],
+        github: "https://github.com/Maahi-0/Campus-Connect", // Assuming the repo name
+        demo: null,
+    },
+    {
+        title: "Next js journey ",
+        description: "My Next.js journey involved building full-stack applications with routing, APIs, and authentication while mastering concepts like SSR, CSR, and server components..",
+        tech: ["Next.js", "Hooks", "vercel", "tailwindcss", "framer-motion", "react"],
+        github: "https://github.com/Maahi-0/NEXt.js---full-stack", // Assuming the repo name
+        demo: null,
+    },
+
     {
         title: "Learning React",
         description: "A comprehensive repository documenting my journey learning React.js, featuring various experiments and exercise components.",
@@ -30,20 +46,6 @@ const projects = [
         description: "A C++ application to manage library operations efficiently, featuring book tracking and member management.",
         tech: ["C++", "File Handling"],
         github: "https://github.com/Maahi-0/Library-Management-System",
-        demo: null,
-    },
-    {
-        title: "Digital Clock",
-        description: "A real-time digital clock implementation demonstrating time manipulation in C.",
-        tech: ["C", "Time Library"],
-        github: "https://github.com/Maahi-0/Digital-Clock",
-        demo: null,
-    },
-    {
-        title: "Progress Bar",
-        description: "A visual progress bar implementation for console applications.",
-        tech: ["C", "Console UI"],
-        github: "https://github.com/Maahi-0/Progress-Bar",
         demo: null,
     },
 ];
@@ -75,8 +77,8 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             className={`group relative border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${project.isSpecial
-                                    ? "bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-blue-500/50 shadow-blue-500/20"
-                                    : "bg-[#111111] hover:border-blue-500/30 hover:shadow-blue-500/10"
+                                ? "bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-blue-500/50 shadow-blue-500/20"
+                                : "bg-[#111111] hover:border-blue-500/30 hover:shadow-blue-500/10"
                                 }`}
                         >
 

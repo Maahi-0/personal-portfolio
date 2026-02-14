@@ -44,7 +44,7 @@ const Hero = () => {
                         Crafting digital experiences with code and creativity.
                         <br />
                         <span className="text-gray-500 text-lg">
-                            Mern Stack Developer & Aspiring Software Engineer
+                            Building Scalable Web Experiences with Next.js and Aspiring Software Engineer
                         </span>
                     </p>
 

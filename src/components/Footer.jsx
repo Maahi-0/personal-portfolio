@@ -8,7 +8,7 @@ const Footer = () => {
                     © {new Date().getFullYear()} Maahi. All rights reserved.
                 </p>
                 <p className="text-gray-600 text-xs mt-2">
-                    Built with React & Tailwind CSS
+                    new sm
                 </p>
             </div>
         </footer>
