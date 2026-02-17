@@ -36,47 +36,46 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <section id="experience" className="py-24 bg-transparent relative">
+        <section id="experience" className="py-32 bg-[var(--bg-primary)]">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Professional <span className="text-blue-500">Experience</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+                        Career <span className="text-[var(--text-primary)]">Journey.</span>
                     </h2>
-                    <p className="text-gray-400 max-w-xl mx-auto">
-                        My journey in community leadership and technical growth.
+                    <p className="text-[var(--text-secondary)] text-lg font-light max-w-xl mx-auto">
+                        Mapping my involvement in technical communities and leadership roles.
                     </p>
                 </motion.div>
 
-                <div className="max-w-4xl mx-auto space-y-12">
+                <div className="max-w-3xl mx-auto">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                            initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="relative pl-8 md:pl-0"
+                            transition={{ delay: index * 0.1 }}
+                            className="relative pl-10 pb-12 border-l-2 border-[var(--card-border)] last:border-0 last:pb-0"
                         >
-                            {/* Timeline Connector */}
-                            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-blue-500/20" />
+                            {/* Dot indicator */}
+                            <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-black dark:bg-white border-4 border-[var(--bg-primary)]" />
 
-                            <div className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                                <div className="flex-1 w-full md:w-auto">
-                                    <div className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-blue-500/30 transition-all hover:bg-white/10 group">
-                                        <span className="text-blue-500 font-bold text-sm tracking-widest uppercase">{exp.period}</span>
-                                        <h3 className="text-2xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors">{exp.role}</h3>
-                                        <p className="text-blue-200/60 font-medium mb-4">{exp.company}</p>
-                                        <p className="text-gray-400 leading-relaxed">{exp.description}</p>
-                                    </div>
-                                </div>
-
-                                <div className="absolute left-0 md:static w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)] z-10" />
-
-                                <div className="flex-1 hidden md:block" />
+                            <div className="card-minimal hover:border-black/30 dark:hover:border-white/30 p-6"> {/* Added p-6 for consistent padding */}
+                                <span className="text-[var(--text-primary)] text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-60">
+                                    {exp.period}
+                                </span>
+                                <h3 className="text-2xl font-bold mb-1 tracking-tight">{exp.role}</h3>
+                                <p className="text-[var(--text-primary)] font-medium mb-4 opacity-70">
+                                    {exp.company}
+                                </p>
+                                <p className="text-[var(--text-secondary)] text-sm leading-relaxed font-light">
+                                    {exp.description}
+                                </p>
                             </div>
                         </motion.div>
                     ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -8,59 +9,83 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const navLinks = [
-        { name: "About", href: "#about" },
-        { name: "Experience", href: "#experience" },
-        { name: "Certificates", href: "#certificates" },
-        { name: "Education", href: "#education" },
-        { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
-        { name: "Contact", href: "#contact" },
+        { name: "About me", href: "#about" },
+        { name: "Experience", href: "#experience" },
+        { name: "Skills", href: "#skills" },
+        { name: "Contact me", href: "#contact" },
+    ];
+
+    const socials = [
+        { icon: <FaGithub />, href: "https://github.com", label: "GitHub" },
+        { icon: <FaLinkedin />, href: "https://linkedin.com", label: "LinkedIn" },
+        { icon: <FaTwitter />, href: "https://twitter.com", label: "Twitter" },
+        { icon: <FaInstagram />, href: "https://instagram.com", label: "Instagram" },
     ];
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/90 backdrop-blur-md py-4 shadow-lg shadow-blue-900/20" : "bg-transparent py-6"
-                }`}
+            className={`fixed w-full z-50 transition-all duration-500 ${scrolled
+                ? "bg-[var(--bg-primary)]/80 backdrop-blur-xl border-b border-[var(--card-border)] py-3"
+                : "bg-transparent py-6"}`}
         >
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
-                    Muskan Wagh<span className="text-white">.</span>
+                {/* Logo */}
+                <a href="#" className="text-xl font-bold tracking-tighter">
+                    MW<span className="text-[var(--text-primary)]">.</span>
                 </a>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                {/* Desktop Center Links */}
+                <div className="hidden md:flex items-center gap-10">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-300 hover:text-blue-400 transition-colors text-xs font-semibold tracking-widest uppercase relative group"
+                            className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors text-sm font-medium"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-700 to-blue-400 transition-all group-hover:w-full"></span>
                         </a>
                     ))}
+                </div>
+
+                {/* Desktop Right Socials + Toggle */}
+                <div className="hidden md:flex items-center gap-6">
+                    <div className="flex items-center gap-4 border-r border-[var(--card-border)] pr-6">
+                        {socials.map((social, index) => (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors text-lg"
+                                aria-label={social.label}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
                     <ThemeToggle />
                 </div>
 
-                {/* Mobile Menu Button + Toggle */}
+                {/* Mobile Menu Button */}
                 <div className="flex items-center gap-4 md:hidden">
                     <ThemeToggle />
                     <button
-                        className="text-white focus:outline-none"
+                        className="text-[var(--text-primary)] focus:outline-none"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             {isOpen ? (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                             ) : (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
                             )}
                         </svg>
                     </button>
@@ -70,21 +95,28 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-white/10"
+                    className="md:hidden absolute top-full left-0 w-full bg-[var(--bg-primary)] border-b border-[var(--card-border)] shadow-xl"
                 >
-                    <div className="flex flex-col p-6 gap-4 text-center">
+                    <div className="flex flex-col p-8 gap-6 text-center">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-gray-300 hover:text-white text-lg font-medium p-2 border-b border-white/5 last:border-0"
+                                className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-lg font-medium"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
                             </a>
                         ))}
+                        <div className="flex justify-center gap-6 pt-4 border-t border-[var(--card-border)]">
+                            {socials.map((social, index) => (
+                                <a key={index} href={social.href} className="text-2xl text-[var(--text-secondary)]">
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             )}

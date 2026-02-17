@@ -3,72 +3,55 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
-
     {
-        title: "Campus Connect ",
-        description: "Campus Connect is a centralized web platform built with Next.js that enables students to discover clubs, events, and campus communities in one place.",
-        tech: ["Next.js", "Hooks", "vercel", "tailwindcss", "framer-motion"],
-        github: "https://github.com/Maahi-0/Campus-Connect", // Assuming the repo name
-        demo: null,
+        title: "Campus Connect",
+        description: "A centralized platform for student discovery of clubs and events, built with Next.js.",
+        tech: ["Next.js", "Tailwind", "Framer Motion"],
+        github: "https://github.com/Maahi-0/Campus-Connect",
+        image: "https://images.unsplash.com/photo-1523050335102-c32509142279?auto=format&fit=crop&q=80&w=800",
     },
     {
-        title: "Next js journey ",
-        description: "My Next.js journey involved building full-stack applications with routing, APIs, and authentication while mastering concepts like SSR, CSR, and server components..",
-        tech: ["Next.js", "Hooks", "vercel", "tailwindcss", "framer-motion", "react"],
-        github: "https://github.com/Maahi-0/NEXt.js---full-stack", // Assuming the repo name
-        demo: null,
+        title: "Full-Stack Journey",
+        description: "Mastering Next.js through building real-world applications and optimizing performace.",
+        tech: ["Next.js", "React", "Server Components"],
+        github: "https://github.com/Maahi-0/NEXt.js---full-stack",
+        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
     },
-
     {
         title: "Learning React",
-        description: "A comprehensive repository documenting my journey learning React.js, featuring various experiments and exercise components.",
-        tech: ["React.js", "Hooks", "Vite"],
-        github: "https://github.com/Maahi-0/Learning-React", // Assuming the repo name
-        demo: null,
+        description: "A comprehensive collection of React experiments and advanced component patterns.",
+        tech: ["React.js", "Vite", "Design Systems"],
+        github: "https://github.com/Maahi-0/Learning-React",
+        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
     },
     {
-        title: "Node.js Projects",
-        description: "Backend development explorations using Node.js and Express, focusing on API creation and server-side logic.",
-        tech: ["Node.js", "Express", "REST API"],
+        title: "Node.js Core",
+        description: "Exploring backend architecture, REST APIs, and scalable server-side systems.",
+        tech: ["Node.js", "Express", "API Design"],
         github: "https://github.com/Maahi-0/Node-js",
-        demo: null,
-    },
-    {
-        title: "Continuous Growth",
-        description: "Work in progress. Growth is continuous by continuously working on new technologies and improving existing skills.",
-        tech: ["MERN", "DSA", "Learning"],
-        github: "https://github.com/Maahi-0",
-        demo: null,
-        isSpecial: true,
-    },
-    {
-        title: "Library Management System",
-        description: "A C++ application to manage library operations efficiently, featuring book tracking and member management.",
-        tech: ["C++", "File Handling"],
-        github: "https://github.com/Maahi-0/Library-Management-System",
-        demo: null,
+        image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=800",
     },
 ];
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-24 bg-transparent text-white">
+        <section id="projects" className="py-32 bg-[var(--bg-primary)]">
             <div className="container mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16"
+                    className="mb-20 text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Feautured <span className="text-blue-500">Projects</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+                        Selected <span className="text-[var(--text-primary)]">Work.</span>
                     </h2>
-                    <p className="text-gray-400 max-w-xl">
-                        A selection of my recent work and experiments.
+                    <p className="text-[var(--text-secondary)] text-lg font-light max-w-2xl mx-auto">
+                        A collection of projects exploring web development, product design, and software engineering.
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-10">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -76,50 +59,45 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`group relative border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${project.isSpecial
-                                ? "bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-blue-500/50 shadow-blue-500/20"
-                                : "bg-[#111111] hover:border-blue-500/30 hover:shadow-blue-500/10"
-                                }`}
+                            className="group"
                         >
-
-                            {/* Card Decoration */}
-                            <div className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full pointer-events-none transition-colors ${project.isSpecial ? "bg-blue-400/20" : "bg-gradient-to-br from-blue-500/20 to-transparent group-hover:from-blue-500/40"
-                                }`} />
-
-                            <div className="p-8 h-full flex flex-col">
-                                <div className="mb-6">
-                                    <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">{project.title}</h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                            <div className="card-minimal h-full flex flex-col p-4">
+                                <div className="relative aspect-video overflow-hidden rounded-xl mb-6">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                                </div>
+                                <div className="px-2 pb-2 flex-grow">
+                                    <h3 className="text-2xl font-bold mb-3 tracking-tight">{project.title}</h3>
+                                    <p className="text-[var(--text-secondary)] text-sm mb-6 leading-relaxed font-light">
                                         {project.description}
                                     </p>
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <div className="flex flex-wrap gap-2 mb-8">
                                         {project.tech.map((t, i) => (
-                                            <span key={i} className="px-3 py-1 bg-white/5 text-xs text-gray-300 rounded-full border border-white/10">
+                                            <span key={i} className="px-3 py-1 bg-[var(--bg-secondary)] text-[10px] uppercase font-bold tracking-widest text-[var(--text-secondary)] rounded-full border border-[var(--card-border)]">
                                                 {t}
                                             </span>
                                         ))}
                                     </div>
-                                </div>
-
-                                <div className="mt-auto flex gap-4">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm font-medium"
-                                    >
-                                        <FaGithub /> View Code
-                                    </a>
-                                    {project.demo && (
+                                    <div className="flex gap-6 mt-auto">
                                         <a
-                                            href={project.demo}
+                                            href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                                            className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--text-primary)] hover:opacity-70 transition-colors"
                                         >
-                                            <FaExternalLinkAlt /> Live Demo
+                                            <FaGithub /> Source Code
                                         </a>
-                                    )}
+                                        <a
+                                            href="#"
+                                            className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--text-primary)] hover:opacity-70 transition-colors"
+                                        >
+                                            <FaExternalLinkAlt /> Case Study
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

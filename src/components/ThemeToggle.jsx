@@ -20,13 +20,13 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 text-gray-300 hover:text-white"
+            className="p-3 rounded-full bg-[var(--bg-secondary)] border border-[var(--card-border)] hover:bg-[var(--bg-primary)] transition-all duration-300 text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             aria-label="Toggle Theme"
         >
             {theme === 'dark' ? (
-                <FaSun className="text-xl text-yellow-500" />
+                <FaSun className="text-lg" />
             ) : (
-                <FaMoon className="text-xl text-blue-400" />
+                <FaMoon className="text-lg" />
             )}
         </button>
     );

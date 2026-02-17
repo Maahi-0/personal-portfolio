@@ -4,61 +4,84 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
-            {/* Background Decor */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] -z-10" />
-
-            <div className="container mx-auto px-6 max-w-4xl">
+        <section id="contact" className="py-32 bg-[var(--bg-secondary)] overflow-hidden">
+            <div className="container mx-auto px-6 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-24"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Get In <span className="text-blue-500">Touch</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+                        Let's <span className="text-[var(--text-primary)]">Connect.</span>
                     </h2>
-                    <p className="text-gray-400">
-                        Have a project in mind or just want to verify my skills? Let's connect.
+                    <p className="text-[var(--text-secondary)] text-lg font-light max-w-xl mx-auto">
+                        Whether you have a specific project in mind or just want to say hello, I'd love to hear from you.
                     </p>
                 </motion.div>
 
-                <div className="max-w-2xl mx-auto bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl backdrop-blur-sm">
-                    {/* Contact Info */}
-                    <div className="space-y-8 flex flex-col items-center text-center">
-                        <div>
-                            <h3 className="text-3xl font-bold text-white mb-4">Let's Talk</h3>
-                            <p className="text-gray-400 text-lg">
-                                I'm currently available for freelance projects and job opportunities.
-                            </p>
-                        </div>
+                <div className="grid md:grid-cols-2 gap-12">
+                    {/* Contact Channels */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-6"
+                    >
+                        <h3 className="text-2xl font-bold tracking-tight mb-8 text-[var(--text-primary)]">Reach out via</h3>
 
-                        <div className="space-y-6 w-full max-w-md">
-                            <a href="mailto:muskanwagh16@gmail.com" className="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded-2xl text-gray-300 hover:text-blue-400 hover:border-blue-500/30 transition-all group">
-                                <div className="p-3 bg-blue-500/10 rounded-xl group-hover:bg-blue-500/20 transition-colors">
-                                    <FaEnvelope className="text-2xl text-blue-500" />
-                                </div>
-                                <span className="font-semibold text-lg">muskanwagh1608@gmail.com</span>
-                            </a>
-                            <a href="https://github.com/Maahi-0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 p-4 bg-white/5 border border-white/10 rounded-2xl text-gray-300 hover:text-white hover:border-white/30 transition-all group">
-                                <div className="p-3 bg-white/10 rounded-xl group-hover:bg-white/20 transition-colors">
-                                    <FaGithub className="text-2xl" />
-                                </div>
-                                <span className="font-semibold text-lg">github.com/Maahi-0</span>
-                            </a>
-                        </div>
-
-                        <div className="pt-10 w-full border-t border-white/10">
-                            <p className="text-gray-500 text-sm mb-6 uppercase tracking-widest">Connect on Socials</p>
-                            <div className="flex gap-6 justify-center">
-                                <a href="https://www.linkedin.com/in/muskan-wagh-22b2b5325" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-blue-600/20 hover:text-blue-400 text-gray-400 transition-all hover:scale-110 hover:border-blue-500/30">
-                                    <FaLinkedin className="text-2xl" />
-                                </a>
-                                <a href="https://twitter.com/muskanwagh" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-blue-400/20 hover:text-blue-400 text-gray-400 transition-all hover:scale-110 hover:border-blue-500/30">
-                                    <FaTwitter className="text-2xl" />
-                                </a>
+                        <a href="mailto:muskanwagh1608@gmail.com" className="card-minimal flex items-center gap-6 group hover:border-black/30 dark:hover:border-white/30">
+                            <div className="w-12 h-12 flex items-center justify-center bg-black/5 dark:bg-white/5 rounded-full text-[var(--text-primary)] group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-all">
+                                <FaEnvelope className="text-xl" />
                             </div>
-                        </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Email</p>
+                                <p className="text-[var(--text-primary)] font-medium">muskanwagh1608@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="card-minimal flex items-center gap-6 group hover:border-black/30 dark:hover:border-white/30">
+                            <div className="w-12 h-12 flex items-center justify-center bg-black/5 dark:bg-white/5 rounded-full text-[var(--text-primary)] group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-all">
+                                <FaLinkedin className="text-xl" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">LinkedIn</p>
+                                <p className="text-[var(--text-primary)] font-medium">Muskan Wagh</p>
+                            </div>
+                        </a>
+                    </motion.div>
+
+                    {/* Quick Message / CTA */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="card-minimal dark:bg-black p-10 flex flex-col justify-center text-center md:text-left"
+                    >
+                        <h3 className="text-3xl font-bold tracking-tight mb-6 text-[var(--text-primary)]">Want to collaborate?</h3>
+                        <p className="text-[var(--text-secondary)] mb-10 font-light leading-relaxed">
+                            I'm currently looking for new opportunities and would love to discuss how I can help your team.
+                        </p>
+                        <a
+                            href="mailto:muskanwagh1608@gmail.com"
+                            className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:opacity-80 transition-all text-center"
+                        >
+                            Send a Message
+                        </a>
+                    </motion.div>
+                </div>
+
+                {/* Social Sidebar/Bottom */}
+                <div className="mt-32 pt-12 border-t border-[var(--card-border)] flex flex-col md:flex-row justify-between items-center gap-8">
+                    <p className="text-[var(--text-secondary)] text-sm font-light">
+                        © 2024 Muskan Wagh. All rights reserved.
+                    </p>
+                    <div className="flex gap-8">
+                        {[{ icon: <FaGithub />, href: "#" }, { icon: <FaTwitter />, href: "#" }, { icon: <FaLinkedin />, href: "#" }].map((social, i) => (
+                            <a key={i} href={social.href} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xl transition-colors">
+                                {social.icon}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>

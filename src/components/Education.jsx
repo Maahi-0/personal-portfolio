@@ -1,67 +1,69 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SiReact, SiMongodb, SiNodedotjs, SiExpress } from "react-icons/si";
 
 const Education = () => {
     return (
-        <section id="education" className="py-24 bg-transparent relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -z-10" />
-
+        <section id="education" className="py-32 bg-[var(--bg-primary)]">
             <div className="container mx-auto px-6 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        Educational <span className="text-blue-400">Background</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter text-[var(--text-primary)]">
+                        Academic <span className="text-[var(--text-primary)]">Background.</span>
                     </h2>
                 </motion.div>
 
-                <div className="grid md:grid-cols-5 gap-12 items-center">
+                <div className="grid md:grid-cols-2 gap-10">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="md:col-span-2 p-8 bg-gradient-to-br from-blue-900/20 to-blue-500/5 border border-white/10 rounded-3xl"
+                        className="card-minimal dark:bg-black p-10 flex flex-col items-start"
                     >
-                        <span className="inline-block px-4 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-bold mb-4 uppercase tracking-widest">Ongoing</span>
-                        <h3 className="text-3xl font-bold text-white mb-2">Bachelor of Technology</h3>
-                        <p className="text-gray-400 mb-6 font-medium">SAGE University Indore</p>
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                                <span className="text-gray-300">Degree Period: 2023 - 2027</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                                <span className="text-gray-300">Currently in 3rd Year</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                                <span className="text-gray-300">Major: Computer Science (MERN Specialization)</span>
-                            </div>
-                        </div>
+                        <span className="text-[var(--text-primary)] text-xs font-bold uppercase tracking-[0.2em] mb-4 opacity-60">
+                            2023 — 2027
+                        </span>
+                        <h3 className="text-3xl font-bold mb-2 tracking-tight text-[var(--text-primary)]">Bachelor of Technology</h3>
+                        <p className="text-[var(--text-secondary)] font-medium mb-8">
+                            SAGE University Indore
+                        </p>
+
+                        <ul className="space-y-4 text-[var(--text-secondary)] font-light leading-relaxed">
+                            <li className="flex gap-4">
+                                <span className="text-[var(--text-primary)] font-bold">•</span>
+                                3rd Year Student in Computer Science
+                            </li>
+                            <li className="flex gap-4">
+                                <span className="text-[var(--text-primary)] font-bold">•</span>
+                                Specializing in MERN Stack Development
+                            </li>
+                            <li className="flex gap-4">
+                                <span className="text-[var(--text-primary)] font-bold">•</span>
+                                Actively involved in Technical Communities
+                            </li>
+                        </ul>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="md:col-span-3 space-y-6"
+                        transition={{ delay: 0.1 }}
+                        className="flex flex-col justify-center gap-6"
                     >
-                        <h4 className="text-2xl font-bold text-white mb-4">Core Focus: <span className="text-blue-500">MERN Stack Projects</span></h4>
-                        <p className="text-gray-400 leading-relaxed mb-8 text-lg">
-                            My academic journey is heavily complemented by practical application. I am dedicated to building full-stack applications using modern technologies, with a primary focus on bridging the gap between theoretical computer science and industry-ready development.
+                        <h4 className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">Focus & Specialization</h4>
+                        <p className="text-[var(--text-secondary)] text-lg font-light leading-relaxed">
+                            My academic journey is centered around bridging the gap between theoretical foundations and practical, industry-standard engineering. I focus on building scalable systems while maintaining clean, maintainable codebases.
                         </p>
-
-                        <div className="flex gap-6 text-4xl text-blue-400/50">
-                            <SiMongodb className="hover:text-green-500 transition-colors" />
-                            <SiExpress className="hover:text-white transition-colors" />
-                            <SiReact className="hover:text-blue-400 transition-colors" />
-                            <SiNodedotjs className="hover:text-green-600 transition-colors" />
+                        <div className="flex gap-4 pt-4">
+                            {["Architecture", "Real-world Labs", "Community Lead"].map((tag, i) => (
+                                <span key={i} className="text-[10px] uppercase font-bold tracking-widest text-[var(--text-primary)] border border-[var(--card-border)] px-3 py-1 rounded-full bg-[var(--bg-secondary)]">
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
                     </motion.div>
                 </div>

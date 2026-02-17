@@ -1,78 +1,75 @@
 import React from "react";
 import { motion } from "framer-motion";
+import profileImg from "../assets/profile.png";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent transition-colors duration-500">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-900/20 rounded-full blur-[120px]" />
-                <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] bg-blue-700/10 rounded-full blur-[120px]" />
-            </div>
-
-            <div className="container mx-auto px-6 relative z-10 text-center">
+        <section className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden bg-wavy">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="text-center max-w-4xl"
                 >
-                    <motion.h2
-                        className="text-sm md:text-md uppercase tracking-[0.4em] text-blue-400 mb-4 font-bold"
-                        animate={{
-                            opacity: [0.5, 1, 0.5],
-                            textShadow: [
-                                "0 0 0px rgba(96, 165, 250, 0)",
-                                "0 0 20px rgba(96, 165, 250, 0.8)",
-                                "0 0 0px rgba(96, 165, 250, 0)"
-                            ],
-                            scale: [1, 1.05, 1]
-                        }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
+                    {/* Optional Profile Image */}
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className="mb-8 relative"
                     >
-                        Hello World, I'm
-                    </motion.h2>
-                    <h1 className="text-6xl md:text-8xl font-bold mb-6">
-                        <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-800 bg-clip-text text-transparent animate-gradient-x">
-                            Muskan wagh
-                        </span>
+                        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mx-auto">
+                            <img
+                                src={profileImg}
+                                alt="Muskan Wagh"
+                                className="w-full h-full object-cover transition-all duration-500"
+                            />
+                        </div>
+                    </motion.div>
+
+                    <h2 className="text-lg md:text-xl font-medium text-[var(--text-primary)] mb-4 tracking-tight">
+                        Software Engineer & Full Stack Developer
+                    </h2>
+
+                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 text-[var(--text-primary)]">
+                        Muskan <br className="md:hidden" /> Wagh.
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Crafting digital experiences with code and creativity.
-                        <br />
-                        <span className="text-gray-500 text-lg">
-                            Building Scalable Web Experiences with Next.js and Aspiring Software Engineer
-                        </span>
+
+                    <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+                        Crafting intuitive digital experiences through clean code.
+                        Focused on building scalable web applications with Next.js.
                     </p>
 
-                    <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <a
                             href="#projects"
-                            className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 text-white font-medium hover:scale-105 transition-transform shadow-lg shadow-blue-500/20"
+                            className="group relative px-10 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium transition-all hover:scale-105 active:scale-95"
                         >
-                            View My Work
+                            View Projects
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-colors"
+                            className="px-10 py-4 border border-[var(--card-border)] text-[var(--text-primary)] rounded-full font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-all active:scale-95"
                         >
-                            Contact Me
+                            Get in touch
                         </a>
                     </div>
                 </motion.div>
             </div>
 
-            {/* Scroll indicator */}
+            {/* Subtle floating elements for a premium feel */}
+            <div className="absolute top-1/4 -left-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
+
             <motion.div
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <span className="text-sm tracking-widest">SCROLL</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent mx-auto mt-2" />
+                <div className="w-[1px] h-20 bg-gradient-to-b from-[var(--text-secondary)] to-transparent" />
+                <span className="text-[10px] uppercase tracking-[0.5em] text-[var(--text-secondary)] font-bold">Scroll</span>
             </motion.div>
         </section>
     );

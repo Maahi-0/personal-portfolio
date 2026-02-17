@@ -1,57 +1,55 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaGithub, FaCuttlefish } from "react-icons/fa";
-import { SiTailwindcss, SiCplusplus, SiPython, SiReact, SiNodedotjs, SiExpress, SiMongodb, SiSqlalchemy } from "react-icons/si";
+import { FaReact, FaJs, FaGithub } from "react-icons/fa";
+import { SiTailwindcss, SiCplusplus, SiNodedotjs, SiExpress, SiMongodb, SiNextdotjs } from "react-icons/si";
 
 const skills = [
-    { name: "C", icon: <FaCuttlefish className="text-blue-500" /> },
-    { name: "C++", icon: <SiCplusplus className="text-blue-700" /> },
-    { name: "nodejs", icon: <SiNodedotjs className="text-yellow-400" /> },
-    { name: "expressjs", icon: <SiExpress className="text-yellow-400" /> },
-    { name: "Mongodb", icon: <SiMongodb className="text-yellow-400" /> },
-    { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
-    { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-    { name: "JavaScript", icon: <FaJs className="text-yellow-300" /> },
-    { name: "React", icon: <FaReact className="text-cyan-400" /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-500" /> },
-    { name: "Git", icon: <FaGithub className="text-white" /> },
+    { name: "Node.js", icon: <SiNodedotjs />, color: "text-green-500" },
+    { name: "React", icon: <FaReact />, color: "text-cyan-400" },
+    { name: "Next.js", icon: <SiNextdotjs />, color: "text-black dark:text-white" },
+    { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" },
+    { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
+    { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
+    { name: "Express", icon: <SiExpress />, color: "text-gray-400" },
+    { name: "C++", icon: <SiCplusplus />, color: "text-blue-600" },
+    { name: "Git", icon: <FaGithub />, color: "text-white" },
 ];
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-24 bg-transparent relative overflow-hidden">
-            <div className="container mx-auto px-6 relative z-10">
+        <section id="skills" className="py-32 bg-[var(--bg-secondary)]">
+            <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                        My <span className="text-blue-500">Skills</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+                        Technical <span className="text-[var(--text-primary)]">Expertise.</span>
                     </h2>
-                    <p className="text-gray-400 max-w-xl mx-auto">
-                        Tools and technologies I use to bring ideas to life.
+                    <p className="text-[var(--text-secondary)] text-lg font-light max-w-xl mx-auto">
+                        A curated list of technologies I use to build robust and scalable digital products.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={skill.name}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group p-6 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center gap-4 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 custom-shadow"
+                            transition={{ delay: index * 0.05 }}
                         >
-                            <div className="text-5xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
-                                {skill.icon}
+                            <div className="card-minimal flex flex-col items-center justify-center gap-4 py-8 group">
+                                <div className={`text-4xl transition-all duration-500 ${skill.color}`}>
+                                    {skill.icon}
+                                </div>
+                                <span className="text-[var(--text-primary)] text-sm font-semibold tracking-tight">
+                                    {skill.name}
+                                </span>
                             </div>
-
-                            <span className="text-gray-300 font-medium tracking-wide group-hover:text-white transition-colors">
-                                {skill.name}
-                            </span>
                         </motion.div>
                     ))}
                 </div>
