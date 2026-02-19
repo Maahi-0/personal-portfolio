@@ -48,17 +48,6 @@ const About = () => {
                                 Every project is a lesson in problem-solving and growth. I’m constantly experimenting with new technologies like MongoDB and specialized APIs to understand the full stack of modern product development.
                             </p>
                         </div>
-
-                        <div className="grid grid-cols-2 gap-6 mt-12">
-                            <div className="card-minimal">
-                                <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-1">5+</h3>
-                                <p className="text-[var(--text-secondary)] text-xs uppercase tracking-widest font-bold">Projects</p>
-                            </div>
-                            <div className="card-minimal">
-                                <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-1">2+</h3>
-                                <p className="text-[var(--text-secondary)] text-xs uppercase tracking-widest font-bold">Years Experience</p>
-                            </div>
-                        </div>
                     </motion.div>
                 </div>
             </div>
