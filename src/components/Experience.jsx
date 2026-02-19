@@ -27,10 +27,10 @@ const experiences = [
         description: "Leading sponsorship initiatives, managing relations with partners, and securing resources for community events and technical workshops.",
     },
     {
-        role: "Mern Stack Development & DSA",
+        role: "Full Stack Development with Next js & DSA",
         company: "Technical Skill Enhancement",
         period: "Ongoing",
-        description: "Currently focusing on mastering the MERN stack (MongoDB, Express, React, Node.js) and strengthening Data Structures and Algorithms proficiency.",
+        description: "Currently focusing on mastering the Full stack and strengthening Data Structures and Algorithms proficiency.",
     },
 ];
 
